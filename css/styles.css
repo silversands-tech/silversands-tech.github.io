@@ -1,0 +1,1039 @@
+:root {
+    /* Colors - Light Theme */
+    --bg-color: #ffffff;
+    --bg-darker: #f3f6fc;
+    /* Very light cool gray */
+    --card-bg: #ffffff;
+
+    /* Primary: Darker Cyan/Blue for better contrast on white */
+    --primary: #0070f3;
+    /* Accessible Blue */
+    --primary-hover: #0060df;
+
+    /* Secondary: Deep Purple */
+    --secondary: #6200ea;
+
+    /* Text */
+    --text-heading: #0f172a;
+    /* Slate 900 */
+    --text-main: #334155;
+    /* Slate 700 */
+    --text-muted: #64748b;
+    /* Slate 500 */
+
+    --border-color: #e2e8f0;
+    /* Slate 200 */
+    --success: #10b981;
+
+    /* Typography */
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+
+    /* Spacing */
+    --container-width: 1200px;
+    --section-padding: 8rem 2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-heading);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Utilities */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-darker {
+    background-color: var(--bg-darker);
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    will-change: transform;
+}
+
+.btn-sm {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+    /* White text on blue bg */
+    box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 118, 255, 0.23);
+}
+
+.btn-secondary {
+    background: #fff;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: var(--text-heading);
+}
+
+.btn-outline {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: rgba(0, 112, 243, 0.05);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.2rem 0;
+    background: rgba(255, 255, 255, 0.9);
+    /* Light translucent */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    transition: padding 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text-heading);
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links .btn {
+    color: #fff !important;
+    /* Force white text for button */
+    margin-left: 2rem;
+}
+
+/* Hero */
+.hero {
+    padding: 14rem 0 10rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    contain: paint;
+}
+
+.hero-desc {
+    max-width: 700px;
+    margin: 1.5rem auto 2.5rem;
+    font-size: 1.25rem;
+    color: var(--text-main);
+}
+
+.badge {
+    background: rgba(0, 112, 243, 0.1);
+    color: var(--primary);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 112, 243, 0.2);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    letter-spacing: -1px;
+    background: linear-gradient(to right, #000, #475569);
+    /* Dark gradient text */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.hero-bg-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 60vw;
+    /* Subtle blue/purple glow for light mode */
+    background: radial-gradient(circle, rgba(0, 112, 255, 0.08) 0%, rgba(255, 255, 255, 0) 60%);
+    z-index: -1;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.tech-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 5rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 3rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-heading);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Sections General */
+.section {
+    padding: var(--section-padding);
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Section 1: Integration */
+.img-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transform: translateZ(0);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+.img-wrapper img {
+    width: 100%;
+    display: block;
+}
+
+.glow-effect::after {
+    /* No glow overlay in light mode, just clean image */
+    display: none;
+}
+
+/* Icon System */
+.icon-svg {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.icon-sm {
+    width: 18px;
+    height: 18px;
+}
+
+.icon-lg {
+    width: 48px;
+    height: 48px;
+}
+
+/* Filter logic: We need to turn black icons into Blue (#0070f3) and Purple (#6200ea) */
+/* Generated via https://codepen.io/sosuke/pen/Pjoqqp */
+
+/* Blue: #0070f3 */
+.icon-primary {
+    filter: invert(32%) sepia(87%) saturate(2331%) hue-rotate(202deg) brightness(101%) contrast(106%);
+}
+
+/* Purple: #6200ea */
+.icon-secondary {
+    filter: invert(13%) sepia(87%) saturate(5426%) hue-rotate(264deg) brightness(91%) contrast(116%);
+}
+
+
+/* Icon System (SVG Files) */
+.icon-svg {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    /* Ensure it doesn't squash */
+    flex-shrink: 0;
+    /* Prevent flex shrinking */
+    object-fit: contain;
+    /* Ensures SVG scales correctly within the box */
+}
+
+.icon-sm {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+}
+
+.icon-lg {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+}
+
+/* Invert/Colorize for Neon Effect using Filters */
+/* Cyan Filter approx */
+.icon-primary {
+    filter: invert(86%) sepia(28%) saturate(5833%) hue-rotate(124deg) brightness(102%) contrast(105%);
+}
+
+/* Purple Filter approx */
+.icon-secondary {
+    filter: invert(13%) sepia(96%) saturate(5430%) hue-rotate(264deg) brightness(96%) contrast(124%);
+}
+
+.feature-list li {
+    display: flex;
+    /* Align icon */
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.feature-list .icon-svg {
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+/* Section 2: Data Grid */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.data-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+    /* Soft shadow for light mode cards */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.data-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.data-card i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.data-card .icon-svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1.5rem;
+    /* Apply Blue filter */
+    filter: invert(32%) sepia(87%) saturate(2331%) hue-rotate(202deg) brightness(101%) contrast(106%);
+}
+
+.data-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+/* Section 3: Steps */
+/* Section 3: Steps - Flow Redesign (Desktop: 2 Rows) */
+.steps-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem 3rem;
+    /* Vertical gap 4rem, Horizontal gap 3rem */
+    margin-top: 4rem;
+    position: relative;
+    max-width: 1000px;
+    /* Constrain width to ensure nice 3-item break */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Remove old global line */
+.steps-grid::before {
+    display: none;
+}
+
+.step-item {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 10px;
+    flex: 0 0 300px;
+    /* Fixed width for consistent spacing */
+}
+
+/* Line connecting to the right */
+.step-item::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    width: calc(100% + 3rem);
+    /* Item 50% + Gap (3rem) + Next Item 50% */
+    height: 2px;
+    background: var(--border-color);
+    z-index: -1;
+}
+
+/* Hide line for 3rd item (End of Row 1) and Last Item (End of Flow) */
+.step-item:nth-child(3)::after,
+.step-item:last-child::after {
+    display: none;
+}
+
+.step-number {
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border: 2px solid var(--border-color);
+    color: var(--text-muted);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.step-item:hover .step-number {
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(0, 112, 243, 0.1);
+    transform: scale(1.1);
+}
+
+.step-item h3 {
+    font-size: 1.25rem;
+    /* Larger font */
+    margin-bottom: 0.75rem;
+    color: var(--text-heading);
+}
+
+.step-item p {
+    font-size: 1.05rem;
+    /* Larger font */
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* Section 4: Benefits */
+.benefits-list {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.benefit-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.benefit-icon {
+    background: rgba(0, 112, 243, 0.1);
+    /* Primary Blue background */
+    color: var(--primary);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 1.25rem;
+}
+
+.benefit-icon .icon-svg {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    flex-shrink: 0;
+    /* Apply Primary Blue filter */
+    filter: invert(32%) sepia(87%) saturate(2331%) hue-rotate(202deg) brightness(101%) contrast(106%);
+}
+
+/* Section 5: Use Cases */
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Corrected minmax syntax */
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.use-case-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.use-case-card h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+/* Section 6: Tech */
+.section-tech.bg-darker {
+    background-color: #0f172a;
+    /* Force dark Slate 900 */
+    color: #e2e8f0;
+}
+
+.section-tech h2,
+.section-tech h3 {
+    color: #fff;
+}
+
+.section-tech .tech-list li {
+    color: #94a3b8;
+}
+
+.tech-layout {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.tech-info {
+    flex: 1;
+}
+
+.tech-demo {
+    flex: 1;
+}
+
+.tech-list {
+    margin-top: 2rem;
+}
+
+.tech-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.tech-list i {
+    width: 25px;
+    color: #fff;
+    margin-right: 0.5rem;
+}
+
+.tech-list .icon-svg {
+    margin-right: 0.75rem;
+    width: 20px;
+    height: 20px;
+    opacity: 0.9;
+    filter: invert(1);
+    /* Make tech icons white */
+}
+
+.code-window {
+    background: #1e1e1e;
+    /* Keep code dark */
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+.window-header {
+    background: #252526;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.window-title {
+    margin-left: 1rem;
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.window-body {
+    padding: 1.5rem;
+    font-family: var(--font-code);
+    font-size: 0.9rem;
+    color: #d4d4d4;
+    overflow-x: auto;
+}
+
+.keyword {
+    color: #569cd6;
+}
+
+.string {
+    color: #ce9178;
+}
+
+/* Section 7: Pricing */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+    /* align-items: start; removed to allow equal height (stretch) */
+}
+
+.pricing-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    /* Ensure it fills the grid cell */
+}
+
+.pricing-card.popular {
+    border-color: var(--primary);
+    transform: scale(1.05);
+    /* Slightly bigger */
+    background: #fff;
+    /* Light bg */
+    z-index: 10;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.plan-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-heading);
+}
+
+.plan-price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-heading);
+}
+
+.plan-price small {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.plan-desc {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    min-height: 40px;
+}
+
+.plan-features {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.plan-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.plan-features li:last-child {
+    border-bottom: none;
+}
+
+/* Section 8: Contact Form */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.contact-form-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    color: #000;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-heading);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f8fafc;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #fff;
+}
+
+.form-footer {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Footer */
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+}
+
+/* Logo SVG Styles (Navbar) */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
+}
+
+.footer-links p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+footer {
+    padding: 4rem 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
+    text-align: center;
+    background: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    /* Fixed: Tech layout uses Flex, not Grid. Adjusting here. */
+    .tech-layout {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .tech-info,
+    .tech-demo {
+        width: 100%;
+        /* Force full width when stacked */
+        min-width: 0;
+        /* Allow flex children to shrink below content size (fixes code block overflow) */
+    }
+
+    .grid-2-col,
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .steps-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        position: relative;
+        padding-left: 1rem;
+    }
+
+    /* Vertical Line for Mobile Flow */
+    .steps-grid::before {
+        display: block;
+        /* Re-enable vertical line for mobile */
+        top: 0;
+        bottom: 0;
+        left: calc(1rem + 24px);
+        width: 2px;
+        height: 100%;
+        right: auto;
+        position: absolute;
+        content: '';
+        background: var(--border-color);
+        z-index: 0;
+    }
+
+    .step-item {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 0.25rem 1.5rem;
+        /* Gap between title/desc and col gap */
+        text-align: left;
+        padding: 0;
+        flex: 1 1 auto;
+        /* Reset flex basis */
+        width: 100%;
+    }
+
+    /* Disable Desktop Horizontal Lines on Mobile */
+    .step-item::after {
+        display: none !important;
+    }
+
+    .step-number {
+        grid-row: 1 / span 2;
+        /* Span both title and description rows */
+        margin: 0;
+        background: #fff;
+        z-index: 2;
+    }
+
+    .step-item h3 {
+        margin-top: 0.5rem;
+        /* Optically align with the number circle */
+        margin-bottom: 0;
+    }
+
+    .step-item p {
+        margin-bottom: 0;
+    }
+
+    .pricing-card.popular {
+        transform: none;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    /* Mobile menu implementation usually requires JS, keeping simple for now */
+}
+
+/* Ensure code block scrolls on small screens instead of breaking layout */
+.window-body {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    /* Mobile Polish */
+    .hero {
+        padding: 8rem 0 4rem;
+        /* Reduced top padding */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        /* Smaller font for mobile */
+        word-wrap: break-word;
+        /* Prevent overflow */
+    }
+
+    .section {
+        padding: 5rem 1.5rem;
+        /* Reduced section padding */
+    }
+
+    /* Request: 0px container padding for sections below hero, relying on section padding (24px) */
+    .section .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .grid-2-col,
+    .contact-wrapper {
+        gap: 2rem;
+    }
+
+    .pricing-card.popular {
+        transform: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
